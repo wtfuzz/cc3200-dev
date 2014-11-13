@@ -11,7 +11,7 @@ LIBC:=${shell ${CC} ${CFLAGS} -print-file-name=libc.a}
 LIBGCC:=${shell ${CC} -mthumb ${CFLAGS} -print-libgcc-file-name}
 LIBADD=$(LIBM) $(LIBC) $(LIBGCC) sdk/libdriverlib.a 
 
-OBJS =  startup.o main.o
+OBJS =  startup.o main.o gpio_if.o
 
 (%.o): %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
